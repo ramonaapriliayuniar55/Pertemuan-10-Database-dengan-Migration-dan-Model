@@ -218,12 +218,7 @@ Route::get('/test-accessor-scope', function () {
         Testing Accessor & Scope
     </h1>';
 
-
-
-    // =========================================
     // SEMUA BUKU
-    // =========================================
-
     $html .= '<h3 class="mt-4 text-primary">Semua Buku</h3>';
 
     $html .= '
@@ -257,12 +252,7 @@ Route::get('/test-accessor-scope', function () {
         </tbody>
     </table>';
 
-
-
-    // =========================================
     // BUKU TERBARU
-    // =========================================
-
     $html .= '<h3 class="mt-4 text-primary">Buku Terbaru</h3>';
 
     $html .= '
@@ -304,12 +294,7 @@ Route::get('/test-accessor-scope', function () {
         </tbody>
     </table>';
 
-
-
-    // =========================================
     // BUKU STOK MENIPIS
-    // =========================================
-
     $html .= '<h3 class="mt-4 text-primary">Buku Stok Menipis</h3>';
 
     $html .= '
@@ -351,12 +336,7 @@ Route::get('/test-accessor-scope', function () {
         </tbody>
     </table>';
 
-
-
-    // =========================================
     // SEMUA ANGGOTA
-    // =========================================
-
     $html .= '<h3 class="mt-4 text-primary">Semua Anggota</h3>';
 
     $html .= '
@@ -388,12 +368,7 @@ Route::get('/test-accessor-scope', function () {
         </tbody>
     </table>';
 
-
-
-    // =========================================
     // ANGGOTA TERDAFTAR BULAN INI
-    // =========================================
-
     $html .= '
     <h3 class="mt-4 text-primary">
         Anggota Terdaftar Bulan Ini
