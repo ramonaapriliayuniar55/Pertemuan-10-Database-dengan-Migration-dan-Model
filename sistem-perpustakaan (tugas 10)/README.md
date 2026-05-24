@@ -3,8 +3,8 @@
 **Nama:** Ramonaa Aprilia Yuniar  
 **NIM:** 60324039  
 **Prodi:** Informatika  
-**Semester:** 4 
-**Mata Kuliah:** Pemrogramman Web II  
+**Semester:** 4
+**Mata Kuliah:** Pemrograman WEB II
 **Repository:** [https://github.com/ramonaapriliayuniar55/Pertemuan-10-Database-dengan-Migration-dan-Model.git]
 
 ---
