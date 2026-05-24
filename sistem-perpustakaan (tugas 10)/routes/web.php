@@ -174,29 +174,77 @@ Route::get('/cek-kategori', function () {
 //TESTING ACCESSOR & SCOPE
 
 Route::get('/test-accessor-scope', function () {
-    $html = '<!DOCTYPE html>
+
+    $html = '
+    <!DOCTYPE html>
     <html>
     <head>
         <meta charset="UTF-8">
         <title>Testing Accessor & Scope</title>
+
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+        <style>
+
+            body{
+                background:#f4f8ff;
+                font-family: Arial, sans-serif;
+            }
+
+            .judul{
+                color:#0d6efd;
+                font-weight:bold;
+            }
+
+            .custom-table thead{
+                background:#0d6efd !important;
+                color:white !important;
+            }
+
+            .custom-table th{
+                background:#0d6efd !important;
+                color:white !important;
+            }
+
+        </style>
+
     </head>
-    <body class="p-4">';
 
-    $html .= '<h1 class="mb-4">Testing Accessor & Scope</h1>';
+    <body class="p-4">
 
-    //Semua Buku: status_stok_badge & tahun_label 
-    $html .= '<h3 class="mt-4"> Semua Buku </h3>';
-    $html .= '<table class="table table-bordered table-striped">';
-    $html .= '<thead class="table-dark"><tr>
+    <div class="container">
+
+    <h1 class="mb-4 judul">
+        Testing Accessor & Scope
+    </h1>';
+
+
+
+    // =========================================
+    // SEMUA BUKU
+    // =========================================
+
+    $html .= '<h3 class="mt-4 text-primary">Semua Buku</h3>';
+
+    $html .= '
+    <table class="table table-bordered table-hover bg-white custom-table">
+
+        <thead>
+            <tr>
                 <th>Judul</th>
                 <th>Tahun</th>
                 <th>Stok</th>
                 <th>Status Stok</th>
                 <th>Label Tahun</th>
-              </tr></thead><tbody>';
+            </tr>
+        </thead>
+
+        <tbody>';
+
     foreach (Buku::all() as $buku) {
-        $html .= "<tr>
+
+        $html .= "
+        <tr>
             <td>{$buku->judul}</td>
             <td>{$buku->tahun_terbit}</td>
             <td>{$buku->stok}</td>
@@ -204,81 +252,182 @@ Route::get('/test-accessor-scope', function () {
             <td>{$buku->tahun_label}</td>
         </tr>";
     }
-    $html .= '</tbody></table>';
 
-    //Buku Terbaru (scope) 
-    $html .= '<h3 class="mt-4">Buku Terbaru </h3>';
-    $html .= '<table class="table table-bordered table-striped">';
-    $html .= '<thead class="table-dark"><tr>
+    $html .= '
+        </tbody>
+    </table>';
+
+
+
+    // =========================================
+    // BUKU TERBARU
+    // =========================================
+
+    $html .= '<h3 class="mt-4 text-primary">Buku Terbaru</h3>';
+
+    $html .= '
+    <table class="table table-bordered table-hover bg-white custom-table">
+
+        <thead>
+            <tr>
                 <th>Judul Buku</th>
                 <th>Tahun</th>
-              </tr></thead><tbody>';
+            </tr>
+        </thead>
+
+        <tbody>';
+
     $terbaru = Buku::terbaru()->get();
+
     if ($terbaru->isEmpty()) {
-        $html .= "<tr><td colspan='2' class='text-muted text-center'>Tidak ada data.</td></tr>";
+
+        $html .= "
+        <tr>
+            <td colspan='2' class='text-center text-muted'>
+                Tidak ada data
+            </td>
+        </tr>";
+
     } else {
+
         foreach ($terbaru as $buku) {
-            $html .= "<tr>
+
+            $html .= "
+            <tr>
                 <td>{$buku->judul}</td>
                 <td>{$buku->tahun_terbit}</td>
             </tr>";
         }
     }
-    $html .= '</tbody></table>';
 
-    //Buku Stok Menipis (scope) 
-    $html .= '<h3 class="mt-4"> Buku Stok Menipis </h3>';
-    $html .= '<table class="table table-bordered table-striped">';
-    $html .= '<thead class="table-dark"><tr>
+    $html .= '
+        </tbody>
+    </table>';
+
+
+
+    // =========================================
+    // BUKU STOK MENIPIS
+    // =========================================
+
+    $html .= '<h3 class="mt-4 text-primary">Buku Stok Menipis</h3>';
+
+    $html .= '
+    <table class="table table-bordered table-hover bg-white custom-table">
+
+        <thead>
+            <tr>
                 <th>Judul Buku</th>
                 <th>Stok</th>
-              </tr></thead><tbody>';
+            </tr>
+        </thead>
+
+        <tbody>';
+
     $menipis = Buku::stokMenipis()->get();
+
     if ($menipis->isEmpty()) {
-        $html .= "<tr><td colspan='2' class='text-muted text-center'>Tidak ada data.</td></tr>";
+
+        $html .= "
+        <tr>
+            <td colspan='2' class='text-center text-muted'>
+                Tidak ada data
+            </td>
+        </tr>";
+
     } else {
+
         foreach ($menipis as $buku) {
-            $html .= "<tr>
+
+            $html .= "
+            <tr>
                 <td>{$buku->judul}</td>
                 <td>{$buku->stok}</td>
             </tr>";
         }
     }
-    $html .= '</tbody></table>';
 
-    //Semua Anggota: status_badge & kategori_usia 
-    $html .= '<h3 class="mt-4">Semua Anggota</h3>';
-    $html .= '<table class="table table-bordered table-striped">';
-    $html .= '<thead class="table-dark"><tr>
+    $html .= '
+        </tbody>
+    </table>';
+
+
+
+    // =========================================
+    // SEMUA ANGGOTA
+    // =========================================
+
+    $html .= '<h3 class="mt-4 text-primary">Semua Anggota</h3>';
+
+    $html .= '
+    <table class="table table-bordered table-hover bg-white custom-table">
+
+        <thead>
+            <tr>
                 <th>Nama</th>
                 <th>Umur</th>
                 <th>Status</th>
                 <th>Kategori Usia</th>
-              </tr></thead><tbody>';
+            </tr>
+        </thead>
+
+        <tbody>';
+
     foreach (Anggota::all() as $anggota) {
-        $html .= "<tr>
+
+        $html .= "
+        <tr>
             <td>{$anggota->nama}</td>
             <td>{$anggota->umur} tahun</td>
             <td>{$anggota->status_badge}</td>
             <td>{$anggota->kategori_usia}</td>
         </tr>";
     }
-    $html .= '</tbody></table>';
 
-    //Anggota Terdaftar Bulan Ini (scope) 
-    $html .= '<h3 class="mt-4">Anggota Terdaftar Bulan Ini</h3>';
-    $html .= '<ul class="list-group mb-3">';
+    $html .= '
+        </tbody>
+    </table>';
+
+
+
+    // =========================================
+    // ANGGOTA TERDAFTAR BULAN INI
+    // =========================================
+
+    $html .= '
+    <h3 class="mt-4 text-primary">
+        Anggota Terdaftar Bulan Ini
+    </h3>';
+
+    $html .= '<ul class="list-group mb-4">';
+
     $bulanIni = Anggota::terdaftarBulanIni()->get();
+
     if ($bulanIni->isEmpty()) {
-        $html .= "<li class='list-group-item text-muted'>Tidak ada anggota terdaftar bulan ini.</li>";
+
+        $html .= "
+        <li class='list-group-item text-muted'>
+            Tidak ada anggota terdaftar bulan ini
+        </li>";
+
     } else {
+
         foreach ($bulanIni as $anggota) {
-            $html .= "<li class='list-group-item'>{$anggota->nama} — daftar: {$anggota->tanggal_daftar->format('d-m-Y')}</li>";
+
+            $html .= "
+            <li class='list-group-item'>
+                {$anggota->nama}
+                ({$anggota->tanggal_daftar->format('d-m-Y')})
+            </li>";
         }
     }
-    $html .= '</ul>';
 
-    $html .= '</body></html>';
+    $html .= '
+    </ul>
+
+    </div>
+    </body>
+    </html>';
 
     return $html;
 });
