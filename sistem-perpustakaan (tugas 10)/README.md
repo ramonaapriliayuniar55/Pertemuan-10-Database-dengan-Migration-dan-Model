@@ -5,7 +5,7 @@
 **Prodi:** Informatika  
 **Semester:** 4 
 **Mata Kuliah:** Pemrogramman Web II  
-**Repository:** [Link GitHub](https://github.com/ramonaapriliayuniar55/Pertemuan-10-Database-dengan-Migration-dan-Model.git)
+**Repository:** [https://github.com/ramonaapriliayuniar55/Pertemuan-10-Database-dengan-Migration-dan-Model.git]
 
 ---
 
@@ -27,7 +27,7 @@
 ![make model](screenshots/phpartisan%20makemodel%20Kategori.png)
 
 #### 3. Perintah make:seeder
-![make seeder](screenshots/phpartisan%20makeseederKategoriSeeder.png)
+![make seeder](screenshots/phpartisan%20make%20seederKategoriSeeder.png)
 ---
 
 ## Tugas 2 - Model Accessor & Scope
@@ -51,7 +51,7 @@
 ![Semua Buku](screenshots/semuabuku.png)
 
 #### 2. Buku Terbaru & Buku Stok Menipis
-![Buku Terbaru dan Stok Menipis](screenshots/bukuteraru%26bukustokmenipis.png)
+![Buku Terbaru dan Stok Menipis](screenshots/bukuterbaru%26bukustokmenipis.png)
 
 #### 3. Semua Anggota & Terdaftar Bulan Ini
 ![Semua Anggota](screenshots/semuaanggota%26anggotaterdaftarbulanini.png)
