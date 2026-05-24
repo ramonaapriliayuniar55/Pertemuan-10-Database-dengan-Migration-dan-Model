@@ -346,6 +346,7 @@ Route::get('/test-accessor-scope', function () {
             <tr>
                 <th>Nama</th>
                 <th>Umur</th>
+                <th>Jenis Kelamin</th>
                 <th>Status</th>
                 <th>Kategori Usia</th>
             </tr>
@@ -359,6 +360,7 @@ Route::get('/test-accessor-scope', function () {
         <tr>
             <td>{$anggota->nama}</td>
             <td>{$anggota->umur} tahun</td>
+            <td>{$anggota->jenis_kelamin}</td>
             <td>{$anggota->status_badge}</td>
             <td>{$anggota->kategori_usia}</td>
         </tr>";
